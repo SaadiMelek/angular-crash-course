@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {NgForOf, NgIf} from '@angular/common';
 import {MessageDetailsComponent} from '../message-details/message-details.component';
+import {MyFirstService} from '../services/my-first.service';
 
 @Component({
   selector: 'app-my-first-comp',
@@ -22,10 +23,18 @@ export class MyFirstCompComponent {
   message: string = '';
   isSubmited: boolean = false;
   messages: Array<any> = [];
+  // property injection can be used over construct injection (construct injection is recommended)
+  // private service: MyFirstService = inject(MyFirstService);
+
+  // we can use property injection instead of construct injection
+  constructor(private service: MyFirstService) {
+    this.messages = this.service.getAllMessages();
+    this.isSubmited = this.messages.length > 0;
+  }
 
   onSubmit() {
     this.isSubmited = true;
-    this.messages.push({
+    this.service.insert({
       'name': this.name,
       'email': this.email,
       'message': this.message
@@ -36,6 +45,6 @@ export class MyFirstCompComponent {
   }
 
   deleteMessage(index: number) {
-    this.messages.splice(index, 1);
+    this.service.deleteMessage(index);
   }
 }
