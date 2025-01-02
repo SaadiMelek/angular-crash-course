@@ -26,7 +26,7 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getAllProductsWithLimit(10)
+    this.service.getAllProductsWithLimit(5)
       .subscribe({
         next:(data) => {
           console.log(data);

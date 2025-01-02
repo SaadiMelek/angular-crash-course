@@ -1,0 +1,13 @@
+<div class="about-container">
+  <p>parent works!</p>
+  <div>
+    <input type="text" #input>
+    <button (click)="onSubmit(input)">Submit</button>
+  </div>
+  <br><br><br>
+  <app-child [value]="inputText" *ngIf="show">
+    <h4>This is a projected content {{ inputText }}</h4>
+  </app-child>
+  <br><br><br>
+  <button (click)="onDestroy()">Destroy child component</button>
+</div>

@@ -1,3 +1,7 @@
+# See demo on :
+https://www.youtube.com/watch?v=jFk9-zV27BE
+https://www.youtube.com/watch?v=0Ywak7Ppszw
+
 # AngularCrashCourse
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.

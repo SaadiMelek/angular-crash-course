@@ -3,6 +3,7 @@ import {MyFirstCompComponent} from './my-first-comp/my-first-comp.component';
 import {AboutComponent} from './about/about.component';
 import {ProductsComponent} from './products/products.component';
 import {NewProductComponent} from './new-product/new-product.component';
+import {ParentComponent} from './parent/parent.component';
 
 export const routes: Routes = [
   {
@@ -24,5 +25,9 @@ export const routes: Routes = [
   {
     path: 'new-product',
     component: NewProductComponent
+  },
+  {
+    path: 'lifecycle-hooks',
+    component: ParentComponent
   }
 ];
